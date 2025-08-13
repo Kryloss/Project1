@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Lr4Xu2f+5XxhxL7sRKqGZo4PMBVXrS5aXoaZySUdkGFUTkOcJCIZy9FHn5Vf3L7hIwrKyYVJZZzKzb0LC+2+Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header id="landing">
+    <h1>Gym Planner</h1>
+    <p>Plan your training and meals</p>
+    <a href="#app" class="start-btn"><i class="fas fa-arrow-down"></i></a>
+  </header>
+
+  <main id="app">
+    <section id="weeks" class="page active" aria-label="Weeks">
+      <div id="week-nav">
+        <ul id="week-tabs" role="tablist"></ul>
+        <button id="add-week" aria-label="Add week"><i class="fas fa-plus"></i></button>
+      </div>
+      <div id="week-content"></div>
+      <button id="add-block" class="fab" aria-label="Add workout"><i class="fas fa-plus"></i></button>
+    </section>
+
+    <section id="planning" class="page" aria-label="Planning">
+      <h2>Presets</h2>
+      <ul id="preset-list"></ul>
+      <form id="preset-form">
+        <input type="text" id="preset-name" placeholder="Name" required>
+        <input type="number" id="preset-sets" placeholder="Sets" required>
+        <input type="number" id="preset-reps" placeholder="Reps" required>
+        <input type="number" id="preset-weight" placeholder="Weight (kg)">
+        <textarea id="preset-notes" placeholder="Notes"></textarea>
+        <select id="preset-icon">
+          <option value="fa-dumbbell">Dumbbell</option>
+          <option value="fa-person-arrow-up-from-line">Pull Ups</option>
+          <option value="fa-hand-back-fist">Biceps</option>
+          <option value="fa-person-running">Legs</option>
+        </select>
+        <button type="submit">Save Preset</button>
+      </form>
+
+      <h2>Weekly Plan</h2>
+      <div id="plan-builder">
+        <select id="plan-select"></select>
+        <button id="add-plan-item">Add to Plan</button>
+        <ul id="plan-list"></ul>
+      </div>
+    </section>
+
+    <section id="nutrition" class="page" aria-label="Nutrition">
+      <h2>Nutrition</h2>
+      <input type="date" id="nutri-date">
+      <form id="food-form">
+        <input type="text" id="food-name" placeholder="Food" required>
+        <input type="number" id="food-calories" placeholder="Calories" required>
+        <input type="number" id="food-protein" placeholder="Protein (g)" required>
+        <input type="number" id="food-carbs" placeholder="Carbs (g)" required>
+        <input type="number" id="food-fat" placeholder="Fat (g)" required>
+        <button type="submit">Add</button>
+      </form>
+      <ul id="food-list"></ul>
+      <div id="macro-totals"></div>
+    </section>
+  </main>
+
+  <nav id="bottom-nav">
+    <button data-target="weeks" class="active" aria-label="Weeks"><i class="fas fa-calendar-week"></i><span>Weeks</span></button>
+    <button data-target="planning" aria-label="Planning"><i class="fas fa-list"></i><span>Planning</span></button>
+    <button data-target="nutrition" aria-label="Nutrition"><i class="fas fa-apple-whole"></i><span>Nutrition</span></button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

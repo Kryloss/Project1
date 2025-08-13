@@ -1,0 +1,167 @@
+:root {
+  --gold: #FFD700;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--black);
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+#landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--black);
+  color: var(--gold);
+}
+#landing .start-btn {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+#app {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.page {
+  display: none;
+  padding: 1rem;
+  animation: fade 0.3s ease;
+}
+.page.active {
+  display: block;
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#week-nav {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  background: #111;
+}
+#week-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#week-tabs li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+#week-tabs li.active {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+#week-nav button {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.workout {
+  background: #111;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+}
+.workout.dragging {
+  opacity: 0.5;
+}
+.workout i.icon {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  color: var(--gold);
+}
+.workout .details {
+  flex: 1;
+}
+.workout input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 80px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #111;
+  border-top: 1px solid #333;
+}
+#bottom-nav button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s;
+}
+#bottom-nav button.active,
+#bottom-nav button:hover {
+  color: var(--gold);
+}
+
+#preset-form,
+#food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+#preset-list,
+#plan-list,
+#food-list {
+  list-style: none;
+  padding: 0;
+}
+#preset-list li,
+#plan-list li,
+#food-list li {
+  background: #111;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#macro-totals {
+  margin-top: 1rem;
+  font-weight: bold;
+}
